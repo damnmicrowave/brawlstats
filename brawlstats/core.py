@@ -51,7 +51,7 @@ class Client:
         self.connector = options.get('connector')
 
         # Session and request options
-        self.session = options.get('session') or (
+        self.session = session or (
             aiohttp.ClientSession(loop=self.loop, connector=self.connector) if self.is_async else requests.Session()
         )
         self.timeout = timeout
