@@ -103,13 +103,7 @@ class Client:
             raise ServerError(code, url)
 
     def _resolve_cache(self, url):
-        """Find any cached response for the same requested url."""
-        data = self.cache.get(url)
-        if not data:
-            return None
-        if self.debug:
-            log.debug('GET {} got result from cache.'.format(url))
-        return data
+        return None
 
     async def _arequest(self, url):
         """Async method to request a url."""
