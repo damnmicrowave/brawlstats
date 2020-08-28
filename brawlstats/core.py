@@ -45,6 +45,8 @@ class Client:
     REQUEST_LOG = '{method} {url} recieved {text} has returned {status}'
 
     def __init__(self, token, session=None, timeout=30, is_async=False, **options):
+        print('Caching is disabled!')
+        
         # Async options
         self.is_async = is_async
         self.loop = options.get('loop', asyncio.get_event_loop()) if self.is_async else None
